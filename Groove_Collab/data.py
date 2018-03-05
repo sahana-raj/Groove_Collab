@@ -54,7 +54,7 @@ def find_closest_store(dict_list,val,units,output,addr_zip):
         else:
             geo_code = get_lat_lng(val)
         closest_store={}
-        distance = 10000.0
+        distance = None
         if geo_code is None:
             raise TypeError
         else:
@@ -77,48 +77,3 @@ def find_closest_store(dict_list,val,units,output,addr_zip):
         closest_store='Invalid address/zipcode/unable to contact the server.Please try again'
         return closest_store
     return closest_store
-
-
-
-if __name__ == '__main__':
-        dict_list=get_data_from_csv('store-locations.csv')
-        val='93065'
-        units,output,addr_zip='mi','json','zipcode'
-        output=find_closest_store(dict_list,val,units,output,addr_zip)
-        try:
-            result=json.loads(output)
-
-        except:
-            result='Error'
-        print(result)
-
-
-#     print(result)
-#     if result is None:
-#         print('yes')
-#     else:
-#         print('NO')
-# #         a=zip_to_geocode(9453)
-# #         print(a)
-# # #             print('yes')
-# # #         else:
-# # #             print('no')
-#         dict_list=get_data_from_csv('store-locations.csv')
-#         units='mi'
-#         output='text'
-#         addr_zip='zipcode'
-#         val=94538
-#         x=find_closest_store(dict_list,val,units,output,addr_zip)
-#         print(x)
-
-        # geo_code1 =get_lat_lng("2707 texas ave, Simi Valley, CA")
-        # geo_code2=get_lat_lng("2907 Cochran St, Simi Valley, CA 93065")
-        # print(geo_code1,geo_code2)
-        # x= compare_lat_lng(geo_code2[0],geo_code2[1],geo_code1[0],geo_code1[1])
-        # geo_code1=[34.2852839,-118.7681599]
-        # geo_code2=[34.2827364,-118.7350457]
-        # y=compare_lat_lng(geo_code2[0],geo_code2[1],geo_code1[0],geo_code1[1])
-        # print(x)
-        # print(y)
-        # @34.2852839,-118.7681599
-        # @34.2827364,-118.7350457
