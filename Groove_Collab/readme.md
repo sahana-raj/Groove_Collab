@@ -20,3 +20,8 @@ Notes-
 The solution is built on the possibility that a given input ,which is a valid address/zip code in State 'A' might be closer to a store in State 'B' rather than a store in State 'A'.
 Since the problem did not specifically mention this case/possibility I will be calculating the distance from the geo code of the input address or the zip code with all records in the given data set.
 Filtering the data set based on the state/city would speed up the solution due to less number of records being processed with each input.
+
+Tests-
+The 10 test cases in the tests.py file cover all the conditions around different arguments in the commands.
+To run the tests-
+python tests.py
