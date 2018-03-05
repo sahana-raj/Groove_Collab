@@ -16,7 +16,7 @@ if __name__ == '__main__':
     try:
         dict_list = data.get_data_from_csv('store-locations.csv')
         arguments = docopt(__doc__)
-        if not dict_list or not arguments:
+        if not dict_list:
             raise TypeError
     except:
         print('No data found in the csv file / docopt unable to parse the arguments in the cli command')
@@ -38,6 +38,4 @@ if __name__ == '__main__':
         else:
             print('Invalid Input. Please try again')
     except:
-        type, value, traceback = sys.exc_info()
-
-        print('Invalid data . Please try again',value,traceback)
+        print('Invalid data . Please try again')
